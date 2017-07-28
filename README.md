@@ -67,12 +67,12 @@ Ver anexo, como escribir el commit de feature. ([Commit de feature.](#commit-de-
 
 Ahora tenemos dos opciones:
 - Si trabajamos con pull-request, lo creamos y será aceptado o no por el administrador, si es aceptado podemos borrar nuestra rama feature local y actualizarnos master con los ultimos cambios ya integrados.
-- Si trabajamos con merge, haremos un merge no fast fordward en master para integrar nuestra feature sin crear un commit de merge.
+- Si trabajamos con merge, haremos un merge con fast forward en master para integrar nuestra feature sin crear un commit de merge.
 
 ```
 git checkout master
 git pull
-git merge miRama --no-commit --no-ff
+git merge --ff-only miRama
 ```
 
 Y si todo ha ido bien.
@@ -113,7 +113,7 @@ Identificadores relacionados, por ejemplo de una herramienta de ticketing, deben
 API getUser ahora devuelve datos adicionales
 
 
-Lla API getUser ahora debe devolver también la lista de mascotas del
+La API getUser ahora debe devolver también la lista de mascotas del
 usuario.
 Ahora la api accede a la base de datos de mascotas y obtiene todas
 las que tenga asociado al usuario en cuestión.
